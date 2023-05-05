@@ -67,11 +67,12 @@ jobs:
       env:
         USERNAME: ${{ secrets.ANYPOINT_PLATFORM_PASSWORD }}
         PASSWORD: ${{ secrets.ANYPOINT_PLATFORM_USERNAME }}
+        
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn clean deploy -X -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -Danypoint.username="$USERNAME" \
-         -Danypoint.password="$PASSWORD" \
+         -Danypoint.username=ksaini \
+         -Danypoint.password=Platform@12345 \
          -Denv=DEV \
          -DskipTests
